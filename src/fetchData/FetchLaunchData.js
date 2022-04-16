@@ -1,5 +1,5 @@
 import React, { useEffect }  from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getLaunchData } from '../redux/action/getLaunchDataAction';
 
 
@@ -8,7 +8,7 @@ const FetchLaunchData = () => {
 
     useEffect(()=>{
         dispatch(getLaunchData())
-    },[])
+    },[dispatch])
 
   return <div></div>;
 };

@@ -7,7 +7,7 @@ const FetchRocketData = () => {
 
     useEffect(()=>{
         dispatch(getRocketData())
-    },[])
+    },[dispatch])
 
   return (
     <div></div>

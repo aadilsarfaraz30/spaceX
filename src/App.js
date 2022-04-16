@@ -11,6 +11,7 @@ function App() {
   console.log(id)
   return (
     <div className="App">
+      <p>dev</p>
       <Router>
       <Navbar />
         <Routes>

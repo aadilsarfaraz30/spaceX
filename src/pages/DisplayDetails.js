@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -14,7 +15,7 @@ const DisplayDetails = () => {
   const details = [];
   const data = useSelector((state) => state.launch);
 
-  const { id } = useParams();
+ const { id } = useParams();
   data.launchData.map((launch) => {
     if (launch.id === id) {
       data.rocketData.map((rocket) => {

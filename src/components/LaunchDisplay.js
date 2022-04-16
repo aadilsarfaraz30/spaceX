@@ -16,7 +16,7 @@ const LaunchDisplay = () => {
   const filterData = useSelector((state) => state.filter.filter);
 
   let display = <AllData />;
-  if (filterData === "rockets" && sortData != "") {
+  if (filterData === "rockets" && sortData !== "") {
     display = <SortByRocketData />;
   } else if (filterData === "launches" && sortData === "success") {
     display = <SuccessData />;

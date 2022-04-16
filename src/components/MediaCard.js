@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import {  CardActionArea } from "@mui/material";
 import { styled } from "@mui/system";
-import { red, green, blue } from "@mui/material/colors";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "../theme/theme";
 import { useSelector } from "react-redux";
@@ -21,10 +20,10 @@ const MediaCard = ({
   launchId,
 }) => {
   const rocket = useSelector((state) => state.launch.rocketData);
-
   let rocketName = "";
 
   rocket.length > 0 &&
+    // eslint-disable-next-line array-callback-return
     rocket.map((data) => {
       if (data.id === rocketId) {
         rocketName = data.name;
@@ -32,10 +31,10 @@ const MediaCard = ({
     });
 
   return (
-    <>
-        <Link to={`/displayDetails/${launchId}`} style={{textDecoration: 'none'}}>
+    <div>
       <ThemeProvider theme={theme}>
-        <Cards>
+      <Link to={`/displayDetails/${launchId}`} style={{textDecoration: 'none'}}>
+        <Cards >
           <CardActionArea>
             <CardImage component="img" image={image} alt="green iguana" />
             <CardContent sx={{ padding: "8px 4px", mt: 2 }}>
@@ -64,9 +63,9 @@ const MediaCard = ({
             </CardContentBottom>
           </CardActionArea>
         </Cards>
-      </ThemeProvider>
       </Link>
-    </>
+      </ThemeProvider>
+    </div>
   );
 };
 

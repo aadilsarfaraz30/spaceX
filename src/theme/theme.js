@@ -15,7 +15,7 @@ const breakpoints = {
 export const theme = createTheme({
   breakpoints: breakpoints,
   typography: {
-    fontFamily: 'Roboto Mono', 
+    fontFamily: 'Montserrat, sans-serif', 
     h4: {
       marginBottom: '2px',
       [`@media screen and (max-width: ${breakpoints.values.largeMobile}px)`]: {

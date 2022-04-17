@@ -1,31 +1,17 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import { Box,  Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
-const Images = ({ images, mobileLarge }) => {
+const Images = ({ images }) => {
   return (
     <Box m={3}>
       {images.length > 0 ? (
-        <Carousel>
+        <Carousel dynamicHeight width="100%">
           {images.map((img) => {
             return (
-              <div
-                style={{
-                  width: "100%",
-                  height: mobileLarge ? "400px" : "500px",
-                }}
-              >
-                <img
-                  style={{
-                    height: mobileLarge ? "100%" : "auto",
-                    objectFit: mobileLarge ? "cover" : "fill",
-                    width: "100%",
-                    textAlign: "center",
-                  }}
-                  src={img}
-                  alt="img"
-                />
+              <div>
+                <img src={img} alt="img" />
               </div>
             );
           })}

@@ -84,7 +84,7 @@ const LaunchDetails = ({ launchDetails, success, largeMobile, failure }) => {
           <>
             <Box
               sx={{
-                textAlign: largeMobile ? "center" : "left",
+                // textAlign: largeMobile ? "center" : "left",
                 textTransform: "capitalize",
                 // marginBottom: "30px",
               }}

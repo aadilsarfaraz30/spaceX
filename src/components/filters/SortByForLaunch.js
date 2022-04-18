@@ -30,7 +30,7 @@ const SortByForLaunch = () => {
           <MenuItem value="upcoming">Upcoming</MenuItem>
           <MenuItem value="success">Success</MenuItem>
           <MenuItem value="fail">Fail</MenuItem>
-          <MenuItem value="">None</MenuItem>
+          {/* <MenuItem value="">None</MenuItem> */}
         </Select>
       </FormControl>
     </Box>

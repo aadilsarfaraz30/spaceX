@@ -3,7 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { Box, Typography } from "@mui/material";
 
-const Images = ({ images }) => {
+const Images = ({ images,mobileLarge }) => {
   return (
     <Box m={3}>
       {images.length > 0 ? (
@@ -11,7 +11,7 @@ const Images = ({ images }) => {
           {images.map((img) => {
             return (
               <div>
-                <img src={img} alt="img" />
+                <img style={{maxHeight: '600px',height: 'auto', objectFit: mobileLarge ? 'contain' : 'fill'}} src={img} alt="img" />
               </div>
             );
           })}

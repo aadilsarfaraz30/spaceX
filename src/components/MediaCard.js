@@ -34,7 +34,7 @@ const MediaCard = ({
     <div>
       <ThemeProvider theme={theme}>
       <Link to={`/displayDetails/${launchId}`} style={{textDecoration: 'none'}}>
-        <Cards >
+        <Cards key ={launchId}>
           <CardActionArea>
             <CardImage component="img" image={image} alt="green iguana" />
             <CardContent sx={{ padding: "8px 4px", mt: 2 }}>
@@ -71,15 +71,16 @@ const MediaCard = ({
 
 const Cards = styled(Card)(({ theme }) => ({
   padding: "10px",
-  [theme.breakpoints.down("desktop")]: {
-    height: "320px",
-  },
-  [theme.breakpoints.down("largeLaptop")]: {
-    height: "300px",
-  },
-  [theme.breakpoints.down("mediumMobile")]: {
-    height: "250px",
-  },
+  // [theme.breakpoints.down("desktop")]: {
+  //   height: "250px",
+  // },
+  // [theme.breakpoints.down("largeLaptop")]: {
+  //   height: "auto",
+  // },
+  // [theme.breakpoints.down("mediumMobile")]: {
+  //   height: "250px",
+  // },
+  height: 'auto'
 }));
 
 const CardImage = styled(CardMedia)(({ theme }) => ({

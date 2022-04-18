@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Stack } from "@mui/material";
 import { styled } from "@mui/styles";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -22,20 +22,16 @@ const FilterContainer = () => {
   }
 
   return (
-    <FilterWrapper>
+    <FilterWrapper direction='row' gap={2}>
       <Filter />
       {sortBox}
     </FilterWrapper> 
   );
 };
 
-const FilterWrapper = styled(Container)({
-  marginTop: "15px",
-  minHeight: "65px",
-  display: "flex",
-  justifyContent: "flex-start",
-  alignItems: "center",
-  gap: "15px",
+const FilterWrapper = styled(Stack)({
+  marginTop: "20px",
+  marginLeft: '20px',
 });
 
 export default FilterContainer;

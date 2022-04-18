@@ -15,7 +15,7 @@ const DisplayDetails = () => {
   const details = [];
   const data = useSelector((state) => state.launch);
 
- const { id } = useParams();
+  const { id } = useParams();
   data.launchData.map((launch) => {
     if (launch.id === id) {
       data.rocketData.map((rocket) => {
@@ -53,8 +53,8 @@ const DisplayDetails = () => {
           <>
             <ThemeProvider theme={theme}>
               <LaunchTitle>
-                <Typography variant="h3" component="h2">
-                  {data.missionName.slice(0, 11)}
+                <Typography variant="h2" component="div">
+                  {data.missionName}
                 </Typography>
               </LaunchTitle>
 
@@ -69,7 +69,7 @@ const DisplayDetails = () => {
                 <Images images={data.launchImages} mobileLarge={mobileLarge} />
               </LaunchDetailsWrapper>
               <RocketDetailsWrapper>
-                <Typography textAlign="center" variant="h3" component="h2">
+                <Typography textAlign="center" variant="h2" component="div">
                   {data.rocket}
                 </Typography>
                 <RocketDetails rocketDescription={data.description} />
@@ -103,12 +103,11 @@ const LaunchTitle = styled("div")({
   justifyContent: "space-around",
   alignItems: "center",
   height: "auto",
-  minHeight: "150px",
+  minHeight: "80px",
 });
 
 const LaunchDetailsWrapper = styled(Box)({
   margin: "0 30px",
-  [`@media screen and (max-width: 768px)`]: {},
 });
 
 const RocketDetailsWrapper = styled(Box)({

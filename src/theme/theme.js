@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 const breakpoints = {
   values: {
@@ -12,50 +12,11 @@ const breakpoints = {
   },
 };
 
-export const theme = createTheme({
+export let theme = createTheme({
   breakpoints: breakpoints,
   typography: {
-    fontFamily: 'Montserrat, sans-serif', 
-    h4: {
-      marginBottom: '2px',
-      [`@media screen and (max-width: ${breakpoints.values.largeMobile}px)`]: {
-        fontSize: "25px",
-      },
-      [`@media screen and (max-width: ${breakpoints.values.mediumMobile}px)`]: {
-        fontSize: "20px",
-      },
-     
-    },
-    h5: {
-      [`@media screen and (max-width: ${breakpoints.values.largeMobile}px)`]: {
-        fontSize: "20px",
-      },
-      [`@media screen and (max-width: ${breakpoints.values.mediumMobile}px)`]: {
-        fontSize: "18px",
-      },
-      [`@media screen and (max-width: ${breakpoints.values.mobile}px)`]: {
-        fontSize: "18px",
-      },
-    },
-    h6 : {
-      [`@media screen and (max-width: ${breakpoints.values.largeMobile}px)`]: {
-        fontSize: "14px",
-      },
-      
-    },
-    subtitle1: {
-      fontSize: '20px',
-      [`@media screen and (max-width: ${breakpoints.values.largeLaptop}px)`]: {
-        fontSize: "16px",
-      },
-      [`@media screen and (max-width: ${breakpoints.values.largeMobile}px)`]: {
-        fontSize: "14px",
-      },
-      [`@media screen and (max-width: ${breakpoints.values.mediumMobile}px)`]: {
-        fontSize: "12px",
-      }
-    },
-    
+    fontFamily: "Open Sans, sans-serif",
   },
-  
 });
+
+theme = responsiveFontSizes(theme, { factor: 3 });
